@@ -1,6 +1,11 @@
-import React from "react";
+import Header from "./components/Header.js";
+
 const App = () => {
-  return <div className="text-center mt-8">Hello World</div>;
+  return (
+    <div className="font-Rubik">
+      <Header />
+    </div>
+  );
 };
 
 export default App;
