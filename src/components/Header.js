@@ -14,7 +14,7 @@ const Header = () => {
           <li className="cursor-pointer text-learnplat-gray font-semibold">Articles</li>
           <li className="cursor-pointer text-learnplat-gray font-semibold">Scoreboard</li>
         </ul>
-        <div className="hidden sm:flex sm:items-center">
+        <div className="hidden md:flex md:items-center">
             <button type="button" className="text-learnplat-gray py-2 px-6">
                 Login
             </button>
