@@ -5,9 +5,11 @@ import Feature from './components/Feature.js';
 import Feature1Image from './images/feature1.svg';
 import Feature2Image from './images/feature2.svg';
 import Feature3Image from './images/feature3.svg';
+import useDarkMode from './hooks/useDarkMode';
 const App = () => {
+  useDarkMode();
   return (
-    <div className="font-Rubik">
+    <div className="font-Rubik bg-learnplat-light dark:bg-learnplat-dark transition duration-500">
       <Header />
       <Hero />
       <Feature

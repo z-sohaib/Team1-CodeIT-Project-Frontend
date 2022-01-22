@@ -2,17 +2,17 @@
 import HeroImage from '../images/hero-image.png';
 const Hero = () => {
   return (
-    <section className="relative">
+    <section className="relative" id="home">
       <div className="container flex flex-col-reverse lg:flex-row items-center gap-12 mt-14 lg:mt-28">
         <div className="flex flex-1 flex-col items-center lg:items-start">
-          <p className="hidden md:block md:font-semibold md:text-2xl md:mx-auto md:text-learnplat-gray">
+          <p className="hidden md:block md:font-semibold md:text-2xl md:mx-auto md:text-learnplat-second-gray">
             GDG Algiers & WTM
           </p>
-          <h2 className="text-3xl md:text-4 lg:text-5xl text-center lg:text-left mb-4 font-bold">
+          <h2 className="text-3xl md:text-4 lg:text-5xl text-center lg:text-left mb-4 font-bold dark:text-white">
             Build your <span className="text-learnplat-yellow">Future</span> &
             achieve your <span className="text-learnplat-yellow">Dreams</span>
           </h2>
-          <p className="text-xl font-normal text-center lg:text-left mb-6">
+          <p className="text-xl font-normal text-center lg:text-left mb-6 dark:text-white">
             LearnPlat is knowledge sharing platform <br /> where you find
             roadmaps, courses and much more fun
           </p>
