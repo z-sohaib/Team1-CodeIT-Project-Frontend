@@ -66,7 +66,7 @@ const Header = () => {
               )}
             </ul>
             <div
-              className="cursor-pointer"
+              className="cursor-pointer dark:text-white"
               onClick={() => setIsToggle(!toggle)}
             >
               <i className="text-2xl fas fa-bars"></i>
