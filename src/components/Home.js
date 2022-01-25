@@ -1,5 +1,4 @@
 /* eslint-disable prettier/prettier */
-import Header from './Header.js';
 import Hero from './Hero.js';
 import Feature from './Feature.js';
 import Feature1Image from '../images/feature1.svg';
@@ -8,7 +7,6 @@ import Feature3Image from '../images/feature3.svg';
 const Home = () => {
   return (
     <>
-      <Header />
       <Hero />
       <Feature
         semiTitle1={'Roadmaps'}

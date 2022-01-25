@@ -1,10 +1,8 @@
 /* eslint-disable prettier/prettier */
-import Header from './Header.js';
 import '../styles/customStyle.css';
 const Roadmaps = () => {
   return (
     <>
-      <Header />
       <div className="container flex flex-col gap-12 mt-14 lg:mt-28">
         <div className="flex flex-col gap-4 lg:gap-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
