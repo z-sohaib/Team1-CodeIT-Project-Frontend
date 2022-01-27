@@ -4,6 +4,7 @@ import Home from './components/Home.js';
 import Roadmaps from './components/Roadmaps.js';
 import useDarkMode from './hooks/useDarkMode';
 import Header from './components/Header.js';
+import Leaderboard from './components/Leaderboard.js';
 import { Routes, Route } from 'react-router-dom';
 import Register from './components/Register';
 import Login from './components/Login';
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
 
         <Route path="/roadmaps" element={<Roadmaps />} />
+        <Route path="/leaderboard" element={<Leaderboard />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
       </Routes>
