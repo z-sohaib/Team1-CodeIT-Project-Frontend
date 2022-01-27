@@ -23,6 +23,8 @@ module.exports = {
         "learnplat-light": "#F0EFE9",
         "learnplat-dark": "#2F2E41", 
         "learnplat-yellow-light": "#F9D783", 
+        "learnplat-gray-card": "#5D5C59",
+
       },
     },
     fontFamily: {
@@ -31,6 +33,15 @@ module.exports = {
     container: {
       center: true,
       padding: "1rem",
+      screens: {
+        lg: "1124px",
+        xl: "1124px",
+        "2xl": "1124px",
+      },
+    },
+    Card: {
+      center: true,
+      padding: "0px",
       screens: {
         lg: "1124px",
         xl: "1124px",
