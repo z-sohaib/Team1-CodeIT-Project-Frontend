@@ -6,6 +6,7 @@ import Feature1Image from './images/feature1.svg';
 import Feature2Image from './images/feature2.svg';
 import Feature3Image from './images/feature3.svg';
 import useDarkMode from './hooks/useDarkMode';
+import RoadMaps from './components/RoadMaps.js';
 const App = () => {
   useDarkMode();
   return (
@@ -45,6 +46,9 @@ const App = () => {
         image={Feature3Image}
         order_first={'order-first'}
       />
+
+      {/* new section   */}
+      <RoadMaps/>
     </div>
   );
 };
