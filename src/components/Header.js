@@ -2,9 +2,10 @@
 /* eslint-disable prettier/prettier */
 import { useState } from 'react';
 import useDarkMode from '../hooks/useDarkMode';
+import {Link} from 'react-router-dom'
 const Header = () => {
   const [colorTheme, setTheme] = useDarkMode();
-  const [toggle, setIsToggle] = useState(true);
+  const [toggle, setIsToggle] = useState(false);
   return (
     <header>
       <nav className="container flex flex-col ">
@@ -16,10 +17,10 @@ const Header = () => {
           </div>
           <ul className="hidden sm:flex items-center gap-12 text-bookmark-blue uppercase text-xs">
             <li className="cursor-pointer text-black font-semibold dark:text-white hover:border-b-2 hover:border-learnplat-yellow transition duration-500">
-              <a href="#home">Home</a>
+              <Link to="/" href="#home">Home</Link>
             </li>
             <li className="cursor-pointer text-learnplat-gray font-semibold hover:border-b-2 hover:border-learnplat-yellow transition duration-500">
-              <a href="#Roadmaps">Roadmaps</a>
+              <Link to="/roadmaps">Roadmaps</Link>
             </li>
             <li className="cursor-pointer text-learnplat-gray font-semibold hover:border-b-2 hover:border-learnplat-yellow transition duration-500">
               <a href="#Articles">Articles</a>
@@ -75,22 +76,20 @@ const Header = () => {
         </div>
         <div
           className={
-            'sm:hidden flex flex-col items-center gap-4 bg-learnplat-yellow py-4 rounded transition duration-500 ' +
+            'sm:hidden flex flex-col items-center gap-4 bg-learnplat-yellow dark:bg-learnplat-second-yellow py-4 rounded transition duration-500 ' +
             (toggle ? '' : 'hidden')
           }
         >
-          <a
-            href="#home"
+          <Link to="/"
             className="text-white hover:border-b-2 hover:border-white transition duration-500 font-bold"
           >
             Home
-          </a>
-          <a
-            href="#Roadmaps"
+          </Link>
+          <Link to="/roadmaps"
             className="text-white hover:border-b-2 hover:border-white transition duration-500"
           >
             Roadmaps
-          </a>
+          </Link>
           <a
             href="#Articles"
             className="text-white hover:border-b-2 hover:border-white transition duration-500"
