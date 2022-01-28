@@ -2,7 +2,7 @@
 /* eslint-disable prettier/prettier */
 import { useState } from 'react';
 import useDarkMode from '../hooks/useDarkMode';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 const Header = () => {
   const [colorTheme, setTheme] = useDarkMode();
   const [toggle, setIsToggle] = useState(false);
@@ -17,7 +17,9 @@ const Header = () => {
           </div>
           <ul className="hidden sm:flex items-center gap-12 text-bookmark-blue uppercase text-xs">
             <li className="cursor-pointer text-black font-semibold dark:text-white hover:border-b-2 hover:border-learnplat-yellow transition duration-500">
-              <Link to="/" href="#home">Home</Link>
+              <Link to="/" href="#home">
+                Home
+              </Link>
             </li>
             <li className="cursor-pointer text-learnplat-gray font-semibold hover:border-b-2 hover:border-learnplat-yellow transition duration-500">
               <Link to="/roadmaps">Roadmaps</Link>
@@ -41,15 +43,19 @@ const Header = () => {
             </div>
           </ul>
           <div className="hidden md:flex md:items-center">
-            <button type="button" className="text-learnplat-gray py-2 px-6">
-              Register
-            </button>
-            <button
-              type="button"
-              className="bg-learnplat-yellow text-white rounded-3xl px-6 py-2"
-            >
-              Login
-            </button>
+            <Link to="/register">
+              <button type="button" className="text-learnplat-gray py-2 px-6">
+                Register
+              </button>
+            </Link>
+            <Link to="/login">
+              <button
+                type="button"
+                className="bg-learnplat-yellow text-white rounded-3xl px-6 py-2"
+              >
+                Login
+              </button>
+            </Link>
           </div>
           <div className="flex sm:hidden">
             <ul
@@ -80,12 +86,14 @@ const Header = () => {
             (toggle ? '' : 'hidden')
           }
         >
-          <Link to="/"
+          <Link
+            to="/"
             className="text-white hover:border-b-2 hover:border-white transition duration-500 font-bold"
           >
             Home
           </Link>
-          <Link to="/roadmaps"
+          <Link
+            to="/roadmaps"
             className="text-white hover:border-b-2 hover:border-white transition duration-500"
           >
             Roadmaps
@@ -102,9 +110,14 @@ const Header = () => {
           >
             Scoreboard
           </a>
-          <button type="button" className="bg-white rounded font-bold text-learnplat-yellow py-2 px-6">
+          <Link to="/login">
+            <button
+              type="button"
+              className="bg-white rounded font-bold text-learnplat-yellow py-2 px-6"
+            >
               Login
             </button>
+          </Link>
         </div>
       </nav>
     </header>
