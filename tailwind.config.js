@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable prettier/prettier */
 module.exports = {
   darkMode: 'class',
@@ -21,10 +22,13 @@ module.exports = {
         "learnplat-gray": "#C4C4C4",
         "learnplat-second-gray": "#A7A5A5",
         "learnplat-light": "#F0EFE9",
-        "learnplat-dark": "#2F2E41", 
         "learnplat-yellow-light": "#F9D783", 
         "learnplat-gray-card": "#5D5C59",
-
+        "learnplat-dark": "#2F2E41",
+        "learnplat-second-yellow": "#F9D783",
+        "learnplat-second-orange": "#FABB57",
+        "learnplat-third-orange": "#F9D783",
+        "learnplat-third-gray": "#A7A5A5"
       },
     },
     fontFamily: {

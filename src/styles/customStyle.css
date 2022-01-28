@@ -1,0 +1,12 @@
+.customBorder {
+  border-left: dashed 4px #000;
+  border-image: url('http://i.stack.imgur.com/wLdVc.png') 2 round;
+}
+
+.largeGaps {
+  border-image-source: url('http://i.stack.imgur.com/LKclP.png');
+}
+.customSpacing {
+  border-collapse: separate;
+  border-spacing: 0 1em;
+}

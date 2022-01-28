@@ -2,9 +2,10 @@
 /* eslint-disable prettier/prettier */
 import { useState } from 'react';
 import useDarkMode from '../hooks/useDarkMode';
+import { Link } from 'react-router-dom';
 const Header = () => {
   const [colorTheme, setTheme] = useDarkMode();
-  const [toggle, setIsToggle] = useState(true);
+  const [toggle, setIsToggle] = useState(false);
   return (
     <header>
       <nav className="container flex flex-col ">
@@ -16,16 +17,21 @@ const Header = () => {
           </div>
           <ul className="hidden sm:flex items-center gap-12 text-bookmark-blue uppercase text-xs">
             <li className="cursor-pointer text-black font-semibold dark:text-white hover:border-b-2 hover:border-learnplat-yellow transition duration-500">
-              <a href="#home">Home</a>
+              <Link to="/" href="#home">
+                Home
+              </Link>
             </li>
             <li className="cursor-pointer text-learnplat-gray font-semibold hover:border-b-2 hover:border-learnplat-yellow transition duration-500">
-              <a href="#Roadmaps">Roadmaps</a>
+              <Link to="/roadmaps">Roadmaps</Link>
             </li>
             <li className="cursor-pointer text-learnplat-gray font-semibold hover:border-b-2 hover:border-learnplat-yellow transition duration-500">
-              <a href="#Articles">Articles</a>
+              <Link to="/articles">
+                <a>Articles</a>
+              </Link>
             </li>
+
             <li className="cursor-pointer text-learnplat-gray font-semibold hover:border-b-2 hover:border-learnplat-yellow transition duration-500">
-              <a href="#League">Scoreboard</a>
+              <Link to="/leaderboard">Scoreboard</Link>
             </li>
             <div onClick={() => setTheme(colorTheme)}>
               {colorTheme === 'dark' ? (
@@ -40,15 +46,19 @@ const Header = () => {
             </div>
           </ul>
           <div className="hidden md:flex md:items-center">
-            <button type="button" className="text-learnplat-gray py-2 px-6">
-              Register
-            </button>
-            <button
-              type="button"
-              className="bg-learnplat-yellow text-white rounded-3xl px-6 py-2"
-            >
-              Login
-            </button>
+            <Link to="/register">
+              <button type="button" className="text-learnplat-gray py-2 px-6">
+                Register
+              </button>
+            </Link>
+            <Link to="/login">
+              <button
+                type="button"
+                className="bg-learnplat-yellow text-white rounded-3xl px-6 py-2"
+              >
+                Login
+              </button>
+            </Link>
           </div>
           <div className="flex sm:hidden">
             <ul
@@ -75,37 +85,42 @@ const Header = () => {
         </div>
         <div
           className={
-            'sm:hidden flex flex-col items-center gap-4 bg-learnplat-yellow py-4 rounded transition duration-500 ' +
+            'sm:hidden flex flex-col items-center gap-4 bg-learnplat-yellow dark:bg-learnplat-second-yellow py-4 rounded transition duration-500 ' +
             (toggle ? '' : 'hidden')
           }
         >
-          <a
-            href="#home"
+          <Link
+            to="/"
             className="text-white hover:border-b-2 hover:border-white transition duration-500 font-bold"
           >
             Home
-          </a>
-          <a
-            href="#Roadmaps"
+          </Link>
+          <Link
+            to="/roadmaps"
             className="text-white hover:border-b-2 hover:border-white transition duration-500"
           >
             Roadmaps
-          </a>
-          <a
-            href="#Articles"
+          </Link>
+          <Link
+            to="/articles"
             className="text-white hover:border-b-2 hover:border-white transition duration-500"
           >
             Articles
-          </a>
+          </Link>
           <a
             href="#League"
             className="text-white hover:border-b-2 hover:border-white transition duration-500"
           >
             Scoreboard
           </a>
-          <button type="button" className="bg-white rounded font-bold text-learnplat-yellow py-2 px-6">
+          <Link to="/login">
+            <button
+              type="button"
+              className="bg-white rounded font-bold text-learnplat-yellow py-2 px-6"
+            >
               Login
             </button>
+          </Link>
         </div>
       </nav>
     </header>

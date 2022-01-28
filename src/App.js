@@ -1,54 +1,29 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable prettier/prettier */
-import Header from './components/Header.js';
-import Hero from './components/Hero.js';
-import Feature from './components/Feature.js';
-import Feature1Image from './images/feature1.svg';
-import Feature2Image from './images/feature2.svg';
-import Feature3Image from './images/feature3.svg';
+import Home from './components/Home.js';
+import Roadmaps from './components/Roadmaps.js';
 import useDarkMode from './hooks/useDarkMode';
-import RoadMaps from './components/RoadMaps.js';
+import Header from './components/Header.js';
+import Leaderboard from './components/Leaderboard.js';
+import Articles from './components/Articles.js';
+import { Routes, Route } from 'react-router-dom';
+import Register from './components/Register';
+import Login from './components/Login';
 const App = () => {
   useDarkMode();
   return (
-    <div className="font-Rubik bg-learnplat-light dark:bg-learnplat-dark transition duration-500">
-      <Header />
-      <Hero />
-      <Feature
-        semiTitle1={'Roadmaps'}
-        cep={'&'}
-        semiTitle2={'Projects'}
-        content={
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam ornare cursus dignissim pellentesque hendrerit proin. Consectetur diam ultrices sollicitudinhabitant porta faucibus et dictums'
-        }
-        link={'Motivated? Check out the courses ->'}
-        image={Feature1Image}
-        order_first={'order-first'}
-      />
-      <Feature
-        semiTitle1={'Articles'}
-        cep={'&'}
-        semiTitle2={'News'}
-        content={
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam ornare cursus dignissim pellentesque hendrerit proin. Consectetur diam ultrices sollicitudinhabitant porta faucibus et dictumst.'
-        }
-        link={'What’s new in the industry? ->'}
-        image={Feature2Image}
-      />
-
-      <Feature
-        semiTitle1={'League'}
-        cep={'&'}
-        semiTitle2={'Fun'}
-        content={
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam ornare cursus dignissim pellentesque hendrerit proin. Consectetur diam ultrices sollicitudinhabitant porta faucibus et dictumst.'
-        }
-        link={'The best? Check the scoreboard ->'}
-        image={Feature3Image}
-        order_first={'order-first'}
-      />
-
-      {/* new section   */}
-      <RoadMaps/>
+    <div className="font-Rubik bg-learnplat-light">
+      <div className="dark:bg-learnplat-dark transition duration-500">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/roadmaps" element={<Roadmaps />} />
+          <Route path="/articles" element={<Articles />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </div>
     </div>
   );
 };
