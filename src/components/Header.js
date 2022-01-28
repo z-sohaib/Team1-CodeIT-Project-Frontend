@@ -18,18 +18,14 @@ const Header = () => {
             </Link>
           </div>
           <ul className="hidden sm:flex items-center gap-12 text-bookmark-blue uppercase text-xs">
-            <li className="cursor-pointer text-black font-semibold dark:text-white hover:border-b-2 hover:border-learnplat-yellow transition duration-500">
-              <Link to="/">
-                Home
-              </Link>
+            <li className="cursor-pointer text-learnplat-gray font-semibold hover:border-b-2 hover:border-learnplat-yellow transition duration-500">
+              <Link to="/">Home</Link>
             </li>
             <li className="cursor-pointer text-learnplat-gray font-semibold hover:border-b-2 hover:border-learnplat-yellow transition duration-500">
               <Link to="/roadmaps">Roadmaps</Link>
             </li>
             <li className="cursor-pointer text-learnplat-gray font-semibold hover:border-b-2 hover:border-learnplat-yellow transition duration-500">
-              <Link to="/articles">
-                <a>Articles</a>
-              </Link>
+              <Link to="/articles">Articles</Link>
             </li>
 
             <li className="cursor-pointer text-learnplat-gray font-semibold hover:border-b-2 hover:border-learnplat-yellow transition duration-500">
@@ -48,18 +44,14 @@ const Header = () => {
             </div>
           </ul>
           <div className="hidden md:flex md:items-center">
-            <Link to="/register">
-              <button type="button" className="text-learnplat-gray py-2 px-6">
-                Register
-              </button>
+            <Link to="/register" className="text-learnplat-gray py-2 px-6">
+              <button type="button">Login</button>
             </Link>
-            <Link to="/login">
-              <button
-                type="button"
-                className="bg-learnplat-yellow text-white rounded-3xl px-6 py-2"
-              >
-                Login
-              </button>
+            <Link
+              to="/login"
+              className="bg-learnplat-yellow text-white px-6 py-2 rounded-3xl"
+            >
+              <button type="button">Register</button>
             </Link>
           </div>
           <div className="flex sm:hidden">
@@ -93,7 +85,7 @@ const Header = () => {
         >
           <Link
             to="/"
-            className="text-white hover:border-b-2 hover:border-white transition duration-500 font-bold"
+            className="text-white hover:border-b-2 hover:border-white transition duration-500"
           >
             Home
           </Link>
@@ -109,12 +101,12 @@ const Header = () => {
           >
             Articles
           </Link>
-          <a
-            href="#League"
+          <Link
+            to="/leaderboard"
             className="text-white hover:border-b-2 hover:border-white transition duration-500"
           >
             Scoreboard
-          </a>
+          </Link>
           <Link to="/login">
             <button
               type="button"
