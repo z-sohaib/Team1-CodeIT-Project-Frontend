@@ -15,10 +15,15 @@ const Register = () => {
             />
           </div>
           <div className="flex flex-col gap-6 items-center md:flex-1 md:items-start">
-            <h1 className="font-semibold text-5xl dark:text-gray-100">Welcome back!</h1>
+            <h1 className="font-semibold text-5xl dark:text-gray-100">
+              Welcome back!
+            </h1>
             <form className="flex flex-col gap-6 px-4 md:px-0">
               <div className="flex flex-col gap-2">
-                <label htmlFor="username" className="text-xl dark:text-gray-300">
+                <label
+                  htmlFor="username"
+                  className="text-xl dark:text-gray-300"
+                >
                   User Name
                 </label>
                 <div className="flex border-2 rounded">
@@ -34,7 +39,10 @@ const Register = () => {
               </div>
 
               <div className="flex flex-col gap-2">
-                <label htmlFor="password" className="text-xl dark:text-gray-300">
+                <label
+                  htmlFor="password"
+                  className="text-xl dark:text-gray-300"
+                >
                   Password
                 </label>
                 <div className="flex border-2 rounded">

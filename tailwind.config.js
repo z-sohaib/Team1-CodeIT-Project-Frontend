@@ -13,7 +13,10 @@ module.exports = {
         "learnplat-second-gray": "#A7A5A5",
         "learnplat-light": "#F0EFE9",
         "learnplat-dark": "#2F2E41",
-        "learnplat-second-yellow": "#F9D783"
+        "learnplat-second-yellow": "#F9D783",
+        "learnplat-second-orange": "#FABB57",
+        "learnplat-third-orange": "#F9D783",
+        "learnplat-third-gray": "#A7A5A5"
       },
     },
     fontFamily: {

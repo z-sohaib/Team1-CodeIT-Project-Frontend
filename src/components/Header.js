@@ -25,10 +25,13 @@ const Header = () => {
               <Link to="/roadmaps">Roadmaps</Link>
             </li>
             <li className="cursor-pointer text-learnplat-gray font-semibold hover:border-b-2 hover:border-learnplat-yellow transition duration-500">
-              <a href="#Articles">Articles</a>
+              <Link to="/articles">
+                <a>Articles</a>
+              </Link>
             </li>
+
             <li className="cursor-pointer text-learnplat-gray font-semibold hover:border-b-2 hover:border-learnplat-yellow transition duration-500">
-              <a href="#League">Scoreboard</a>
+              <Link to="/leaderboard">Scoreboard</Link>
             </li>
             <div onClick={() => setTheme(colorTheme)}>
               {colorTheme === 'dark' ? (
@@ -98,12 +101,12 @@ const Header = () => {
           >
             Roadmaps
           </Link>
-          <a
-            href="#Articles"
+          <Link
+            to="/articles"
             className="text-white hover:border-b-2 hover:border-white transition duration-500"
           >
             Articles
-          </a>
+          </Link>
           <a
             href="#League"
             className="text-white hover:border-b-2 hover:border-white transition duration-500"
