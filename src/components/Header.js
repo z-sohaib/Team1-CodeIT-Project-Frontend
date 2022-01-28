@@ -11,13 +11,15 @@ const Header = () => {
       <nav className="container flex flex-col ">
         <div className="flex justify-between items-center py-4">
           <div className="py-1">
-            <h3 className="font-bold text-xl lg:text-2xl dark:text-white">
-              Learn<span className="text-learnplat-yellow">Plat</span>
-            </h3>
+            <Link to="/">
+              <h3 className="font-bold text-xl lg:text-2xl dark:text-white">
+                Learn<span className="text-learnplat-yellow">Plat</span>
+              </h3>
+            </Link>
           </div>
           <ul className="hidden sm:flex items-center gap-12 text-bookmark-blue uppercase text-xs">
             <li className="cursor-pointer text-black font-semibold dark:text-white hover:border-b-2 hover:border-learnplat-yellow transition duration-500">
-              <Link to="/" href="#home">
+              <Link to="/">
                 Home
               </Link>
             </li>
