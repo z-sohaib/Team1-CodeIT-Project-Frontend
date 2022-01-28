@@ -1,209 +1,169 @@
 /* eslint-disable prettier/prettier */
-import '../styles/customStyle.css';
-const Roadmaps = () => {
+// import HeroImage from '../images/hero-image.png';
+import PropTypes from "prop-types";
+import { Swiper, SwiperSlide} from 'swiper/react'; 
+import 'swiper/css'; 
+import CourseThumbnail1 from '../images/CourseThumbnail1.svg'
+import CourseThumbnail2 from '../images/CourseThumbnail2.svg'
+import { useMediaQuery } from 'react-responsive';
+function CoursesSwiper() { 
+// const [isMobile, setIsMobile] = useState(false)
+const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
+// //choose the screen size 
+// const handleResize = () => {
+//   if (window.innerWidth < 720) {
+//       setIsMobile(true)
+//   } else {
+//       setIsMobile(false)
+//   } 
+// }
+// // create an event listener
+// useEffect(() => {
+//   window.addEventListener("resize", handleResize)
+// })
+    // console.log((window.screen.width > 1024 ) ); 
+    // console.log(window.screen.width)
+    // const [slidespreview, setSlidesPreview]= useState(3.25); 
+    // function SlidesPreview () { 
+    //   if (window.screen.width > 1500 ) {
+    //     setSlidesPreview(3.25)
+    //   } else if (window.screen.width < 500) { 
+    //     setSlidesPreview(1.25)
+    //   } else { 
+    //     setSlidesPreview(2.25)
+    //   }
+    //   // console.log(slidespreview);
+    //   // setSlidesPreview((window.screen.width > 1500 ) ? 3.25 : (window.screen.width < 500 ) ? 1.25 : 2.25)
+    //   return slidespreview; 
+    // }
+    // console.log(slidespreview); 
   return (
-    <>
-      <div className="container flex flex-col gap-12 mt-14 lg:mt-28">
-        <div className="flex flex-col gap-4 lg:gap-6">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-            <h1 className="text-5xl font-semibold dark:text-white">
-              Courses <span className="text-learnplat-yellow">Name</span>
-            </h1>
-            <div>
-              <button className="text-xl py-1 rounded px-4 border-2 border-learnplat-yellow bg-white text-learnplat-yellow font-normal">
-                xx Exp
+  <Swiper
+  spaceBetween={45}
+  // slidesPerView={(window.screen.width > 1500 ) ? 3.25 : (window.screen.width < 500 ) ? 1.25 : 2.25}
+  slidesPerView={ isMobile ? 1.3 : 3.3}
+  onSlideChange={() => console.log('slide change')}
+  onSwiper={(swiper) => console.log(swiper)}
+>
+  <SwiperSlide>
+    <CourseCard 
+    Thumbnail={CourseThumbnail1}
+    CourseName="Name Course" 
+    details="Lorem ipsum dolor sit amet, 
+    consectetur adipiscing elit."
+    Exp="Exp"
+    />
+  </SwiperSlide>
+  <SwiperSlide> <CourseCard 
+    Thumbnail={CourseThumbnail2}
+    CourseName="Name Course" 
+    details="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    Exp="Exp"
+    /></SwiperSlide>
+  <SwiperSlide> <CourseCard 
+    Thumbnail={CourseThumbnail1}
+    CourseName="Name Course" 
+    details="Lorem ipsum dolor sit amet, 
+    consectetur adipiscing elit."
+    Exp="Exp"
+    /></SwiperSlide>
+  <SwiperSlide> <CourseCard 
+    Thumbnail={CourseThumbnail2}
+    CourseName="Name Course" 
+    details="Lorem ipsum dolor sit amet, 
+    consectetur adipiscing elit."
+    Exp="Exp"
+    /></SwiperSlide>
+  <SwiperSlide> <CourseCard 
+    Thumbnail={CourseThumbnail1}
+    CourseName="Name Course" 
+    details="Lorem ipsum dolor sit amet, 
+    consectetur adipiscing elit."
+    Exp="Exp"
+    /></SwiperSlide>
+  <SwiperSlide> <CourseCard 
+    Thumbnail={CourseThumbnail2}
+    CourseName="Name Course" 
+    details="Lorem ipsum dolor sit amet, 
+    consectetur adipiscing elit."
+    Exp="Exp"
+    /></SwiperSlide>
+</Swiper>
+  ); 
+}
+
+function CourseCard(props) { 
+  return (
+    <div className=' Card bg-learnplat-yellow-light pb-8 rounded-large'>
+      <div className="object-cover">
+      <img src={props.Thumbnail} alt=''/> 
+      </div> 
+      <div className="flex flex-col justify-center">
+      <h3 className="  text-center font-bold Rubik mt-7 mb-2 lg:text-3xl text-2xl">{props.CourseName}</h3>
+      <p className="text-center Rubik font-medium text-learnplat-gray-card lg:text-lg md:text-sm lg:leading-5  mb-4 px-1 ">{props.details}</p>
+      </div>
+      <div className=" flex flex-row justify-center">
+              <button className="lg:text-xl rounded-md px-3 border-4 border-learnplat-yellow text-learnplat-yellow font-normal mb-2 ">
+                xx {props.Exp}
               </button>
             </div>
-          </div>
-          <p className="text-xl md:text-2xl dark:text-gray-300">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis
-            ultricies hac pellentesque lectus commodo a, blandit. Consequat quis
-            montes, tempor donec quam.
-          </p>
+    </div>
+  );
+}
+CourseCard.propTypes = {
+  Thumbnail: PropTypes.string.isRequired,
+  CourseName: PropTypes.string.isRequired,
+  details: PropTypes.string.isRequired,
+  Exp: PropTypes.string.isRequired,
+
+};
+const Roadmaps = () => {
+
+
+  return (
+  <section className ="relative " id="roadmaps">
+    <div className="container">
+        <div className=" flex flex-row justify-center mt-20 mb-40">
+        <h1 className=" text-5xl lg:text-8xl md:text-4  Rubik font-bold "> Web <span className="text-learnplat-yellow">Dev</span>elopement</h1>
         </div>
-
-        <div className="flex flex-col gap-4 md:flex-row md:items-start pb-4">
-          <ol className="relative customBorder largeGaps dark:border-gray-700">
-            <li className="mb-10 ml-8">
-              <div className="absolute top-2 w-6 h-6 bg-learnplat-yellow rounded -left-3.5 border-4 border-learnplat-second-yellow dark:border-gray-700 dark:bg-gray-900"></div>
-              <div className="text-lg font-semibold text-gray-900 dark:text-white flex flex-col gap-2 md:flex-row md:items-center">
-                <h3 className="font-semibold text-3xl sm:text-4xl">
-                  <span className="text-learnplat-gray dark:text-gray-500">Step 1:</span>NameStep
-                </h3>
-                <div className="md:ml-2">
-                  <button className="py-1 px-2 rounded bg-learnplat-second-yellow text-white text-sm">
-                    xx Exp
-                  </button>
-                </div>
-              </div>
-
-              <p className="my-4 font-normal text-l sm:text-xl text-gray-500 dark:text-gray-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Facilisis ultricies hac pellentesque
+           <div className="flex flex-1 flex-col items-center lg:items-start mt-40">
+              <h2 className="text-3xl md:text-4 lg:text-5xl text-center lg:text-left mb-4 font-bold dark:text-white">
+                Courses <span className="text-learnplat-yellow">&</span> Roadmaps
+              </h2>
+              <p className="text-2xl font-normal text-center lg:text-left mb-6 dark:text-white">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis ultricies hac pellentesque lectus commodo a, blandit. Consequat quis montes, tempor donec quam
               </p>
-              <div className="flex items-center justify-between sm:w-3/4">
-                <div className="flex items-center">
-                  <a href="#" className="underline mr-8 font-semibold text-xl dark:text-white">
-                    Resources
-                  </a>
-                  <a
-                    href="#"
-                    className="underline font-semibold text-xl text-learnplat-yellow"
-                  >
-                    Quiz
-                  </a>
-                </div>
-                <div>
-                  <p>
-                    <span className="text-xl dark:text-gray-300">Score:</span>
-                    <span className="ml-4 bg-learnplat-yellow text-white font-semibold p-2 rounded">
-                      xx/5
-                    </span>
-                  </p>
-                </div>
-              </div>
-            </li>
-            <li className="mb-10 ml-8">
-              <div className="absolute w-6 h-6 bg-learnplat-second-yellow -left-3.5 border-4 rounded border-learnplat-yellow dark:border-gray-900 dark:bg-gray-700"></div>
-              <div className="text-lg font-semibold text-gray-900 dark:text-white flex flex-col gap-2 md:flex-row md:items-center">
-                <h3 className="font-semibold text-3xl sm:text-4xl">
-                  <span className="text-learnplat-gray dark:text-gray-500">Step 2:</span>NameStep
-                </h3>
-                <div className="md:ml-2">
-                  <button className="py-1 px-2 rounded bg-learnplat-second-yellow text-white text-sm">
-                    xx Exp
-                  </button>
-                </div>
-              </div>
-              <p className="my-4 text-l sm:text-xl font-normal text-gray-500 dark:text-gray-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Facilisis ultricies hac pellentesque
-              </p>
-              <div className="flex items-center justify-between sm:w-3/4">
-                <div className="flex items-center">
-                  <a href="#" className="underline mr-8 font-semibold text-xl dark:text-white">
-                    Resources
-                  </a>
-                  <a
-                    href="#"
-                    className="underline font-semibold text-xl text-learnplat-yellow"
-                  >
-                    Quiz
-                  </a>
-                </div>
-                <div>
-                  <p>
-                    <span className="text-xl dark:text-gray-300">Score:</span>
-                    <span className="ml-4 bg-learnplat-yellow text-white font-semibold p-2 rounded">
-                      xx/5
-                    </span>
-                  </p>
-                </div>
-              </div>
-            </li>
-
-            <li className="mb-10 ml-8">
-              <div className="absolute w-6 h-6 bg-white -left-3.5 border-4 rounded border-black dark:border-gray-400 dark:bg-gray-700"></div>
-              <div className="text-lg font-semibold text-gray-900 dark:text-white flex flex-col gap-2 md:flex-row md:items-center">
-                <h3 className="font-semibold text-3xl sm:text-4xl">
-                  <span className="text-learnplat-gray dark:text-gray-500">Step 3:</span>NameStep
-                </h3>
-                <div className="md:ml-2">
-                  <button className="py-1 px-2 rounded bg-learnplat-second-yellow text-white text-sm">
-                    xx Exp
-                  </button>
-                </div>
-              </div>
-              <p className="my-4 text-l sm:text-xl font-normal text-gray-500 dark:text-gray-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Facilisis ultricies hac pellentesque. Lorem ipsum dolor sit
-                amet, consectetur adipiscing elit. Facilisis ultricies hac
-                pellentesque
-              </p>
-              <div className="flex items-center justify-between sm:w-3/4">
-                <div className="flex items-center">
-                  <a href="#" className="underline mr-8 font-semibold text-xl dark:text-white">
-                    Resources
-                  </a>
-                  <a
-                    href="#"
-                    className="underline font-semibold text-xl text-learnplat-yellow"
-                  >
-                    Quiz
-                  </a>
-                </div>
-                <div>
-                  <p>
-                    <span className="text-xl dark:text-gray-300">Score:</span>
-                    <span className="ml-4 bg-learnplat-yellow text-white font-semibold p-2 rounded">
-                      xx/5
-                    </span>
-                  </p>
-                </div>
-              </div>
-            </li>
-
-            <li className="mb-10 ml-8">
-              <div className="absolute w-6 h-6 bg-white -left-3.5 border-4 rounded border-black dark:border-gray-400 dark:bg-gray-700"></div>
-              <div className="text-lg font-semibold text-gray-900 dark:text-white flex flex-col gap-2 md:flex-row md:items-center">
-                <h3 className="font-semibold text-3xl sm:text-4xl">
-                  <span className="text-learnplat-gray dark:text-gray-500">Step 4:</span>NameStep
-                </h3>
-                <div className="md:ml-2">
-                  <button className="py-1 px-2 rounded bg-learnplat-second-yellow text-white text-sm">
-                    xx Exp
-                  </button>
-                </div>
-              </div>
-              <p className="my-4 text-l sm:text-xl font-normal text-gray-500 dark:text-gray-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Facilisis ultricies hac pellentesque. Lorem ipsum dolor sit
-                amet, consectetur adipiscing elit. Facilisis ultricies hac
-                pellentesque
-              </p>
-              <div className="flex items-center justify-between sm:w-3/4">
-                <div className="flex items-center">
-                  <a href="#" className="underline mr-8 font-semibold text-xl dark:text-white">
-                    Resources
-                  </a>
-                  <a
-                    href="#"
-                    className="underline font-semibold text-xl text-learnplat-yellow"
-                  >
-                    Quiz
-                  </a>
-                </div>
-                <div>
-                  <p>
-                    <span className="text-xl dark:text-gray-300">Score:</span>
-                    <span className="ml-4 bg-learnplat-yellow text-white font-semibold p-2 rounded">
-                      xx/5
-                    </span>
-                  </p>
-                </div>
-              </div>
-            </li>
-
-            <li className="mb-10 ml-8">
-              <div className="absolute w-6 h-6 bg-white -left-3.5 border-4 rounded border-black dark:border-gray-400 dark:bg-gray-700"></div>
-              <div className="text-lg font-semibold text-gray-900 dark:text-white flex flex-col gap-2 md:flex-row md:items-center">
-                <h3 className="font-semibold text-4xl">Congrats!</h3>
-              </div>
-            </li>
-          </ol>
-
-          <div className="bg-learnplat-second-yellow rounded p-6 flex flex-col gap-2 pb-28 dark:bg-gray-700 ">
+            </div>
+            <div className="my-11">
               
-            <h3 className="text-4xl text-learnplat-yellow font-semibold">
-              Statistics
-            </h3>
-            <p className="text-gray-500 dark:text-gray-400">Current step: </p>
-            <p className="text-gray-500 dark:text-gray-400">Average Quiz Score: </p>
-            <p className="font-semibold dark:text-gray-300">Completed: </p>
-          </div>
-        </div>
+            <CoursesSwiper/>
+            <div className="flex flex-row justify-center">
+            <hr className=" w-1/2 border-black border-dashed mt-10"/>
+
+            </div>
+            
       </div>
-    </>
+
+           <div className="flex flex-1 flex-col items-center lg:items-start mt-20">
+              <h2 className="text-3xl md:text-4 lg:text-5xl text-center lg:text-left mb-4 font-bold dark:text-white">
+                <span className="text-learnplat-yellow">Tech</span>nologies
+              </h2>
+              <p className="text-2xl font-normal text-center lg:text-left mb-6 dark:text-white">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis ultricies hac pellentesque lectus commodo a, blandit. Consequat quis montes, tempor donec quam
+              </p>
+            </div>
+            <div className="my-11">
+            <CoursesSwiper/>
+            <div className="flex flex-row justify-center">
+            <hr className=" w-1/2 border-black border-dashed mt-10 mb-10"/>
+
+            </div>
+            
+      </div>
+      
+    </div>
+    
+  </section>
   );
 };
 
