@@ -1,15 +1,15 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable prettier/prettier */
-import Home from './components/Home.js';
-import Roadmaps from './components/Roadmaps.js';
-import Roadmap from './components/Roadmap.js';
+import Home from './pages/Home.js';
+import Roadmaps from './pages/Roadmaps.js';
+import Roadmap from './pages/Roadmap.js';
 import useDarkMode from './hooks/useDarkMode';
 import Header from './components/Header.js';
-import Leaderboard from './components/Leaderboard.js';
-import Articles from './components/Articles.js';
+import Leaderboard from './pages/Leaderboard.js';
+import Articles from './pages/Articles.js';
 import { Routes, Route } from 'react-router-dom';
-import Register from './components/Register';
-import Login from './components/Login';
+import Register from './pages/Register';
+import Login from './pages/Login';
 import Footer from './components/Footer.js';
 const App = () => {
   useDarkMode();
@@ -27,6 +27,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
         </Routes>
         <Footer />
+
       </div>
     </div>
   );
